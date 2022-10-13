@@ -54,21 +54,48 @@ class _MyHomePageState extends State<MyHomePage> {
               ? Column(
                   children: [
                     Container(
-                      height: MediaQueryHeight * 0.4,
+                      height: MediaQueryHeight * 0.2,
                       width: MediaQueryWidth,
                       color: Colors.blueGrey,
                     ),
                     Container(
-                      height: MediaQueryHeight * 0.4,
+                        child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Flexible(
+                          fit: FlexFit.tight,
+                          child: Container(
+                              height: MediaQueryHeight * 0.3,
+                              color: Colors.blue,
+                              child: Text("hallo ")),
+                        ),
+                        Flexible(
+                          fit: FlexFit.loose,
+                          child: Container(
+                              height: MediaQueryHeight * 0.3,
+                              color: Colors.red,
+                              child: Text("hallo")),
+                        ),
+                        Flexible(
+                          fit: FlexFit.tight,
+                          child: Container(
+                              height: MediaQueryHeight * 0.3,
+                              color: Colors.blue,
+                              child: Text("hallo")),
+                        )
+                      ],
+                    )),
+                    Container(
+                      height: MediaQueryHeight * 0.3,
                       child: GridView.builder(
                         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                             crossAxisCount: 5),
                         itemCount: 100,
                         itemBuilder: (BuildContext context, int index) {
-                          return GridTile(
-                              child: Container(
-                            color: Colors.black,
-                          ));
+                          return ListTile(
+                            leading: CircleAvatar(),
+                            title: Text("data"),
+                          );
                         },
                       ),
                     ),
@@ -81,11 +108,35 @@ class _MyHomePageState extends State<MyHomePage> {
                       width: 300,
                       color: Colors.blueGrey,
                     ),
-                    SizedBox(
-                      height: MediaQueryHeight * 0.1,
-                    ),
                     Container(
-                      height: MediaQueryHeight * 0.5,
+                        child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Flexible(
+                          fit: FlexFit.tight,
+                          child: Container(
+                              height: MediaQueryHeight * 0.3,
+                              color: Colors.blue,
+                              child: Text("hallo ")),
+                        ),
+                        Flexible(
+                          fit: FlexFit.loose,
+                          child: Container(
+                              height: MediaQueryHeight * 0.3,
+                              color: Colors.red,
+                              child: Text("hallo")),
+                        ),
+                        Flexible(
+                          fit: FlexFit.tight,
+                          child: Container(
+                              height: MediaQueryHeight * 0.3,
+                              color: Colors.blue,
+                              child: Text("hallo")),
+                        )
+                      ],
+                    )),
+                    Container(
+                      height: MediaQueryHeight * 0.3,
                       child: ListView.builder(
                         itemCount: 100,
                         itemBuilder: (BuildContext context, int index) {
