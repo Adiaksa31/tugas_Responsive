@@ -65,28 +65,55 @@ class _MyHomePageState extends State<MyHomePage> {
                         Flexible(
                           fit: FlexFit.tight,
                           child: Container(
-                              height: MediaQueryHeight * 0.3,
+                              height: MediaQueryHeight * 0.2,
                               color: Colors.blue,
                               child: Text("hallo ")),
                         ),
                         Flexible(
                           fit: FlexFit.loose,
                           child: Container(
-                              height: MediaQueryHeight * 0.3,
+                              height: MediaQueryHeight * 0.2,
                               color: Colors.red,
                               child: Text("hallo")),
                         ),
                         Flexible(
                           fit: FlexFit.tight,
                           child: Container(
-                              height: MediaQueryHeight * 0.3,
+                              height: MediaQueryHeight * 0.2,
                               color: Colors.blue,
                               child: Text("hallo")),
                         )
                       ],
                     )),
                     Container(
-                      height: MediaQueryHeight * 0.3,
+                        child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Expanded(
+                          flex: 3,
+                          child: Container(
+                              height: MediaQueryHeight * 0.2,
+                              color: Colors.blue,
+                              child: Center(child: Text("Expanded"))),
+                        ),
+                        Expanded(
+                          flex: 7,
+                          child: Container(
+                              height: MediaQueryHeight * 0.2,
+                              color: Colors.red,
+                              child: Center(child: Text("Expanded"))),
+                        ),
+                        Expanded(
+                          flex: 5,
+                          child: Container(
+                              height: MediaQueryHeight * 0.2,
+                              color: Colors.blue,
+                              child: Center(child: Text("Expanded"))),
+                        )
+                      ],
+                    )),
+                    Container(
+                      height: MediaQueryHeight * 0.2,
                       child: GridView.builder(
                         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                             crossAxisCount: 5),
@@ -104,7 +131,7 @@ class _MyHomePageState extends State<MyHomePage> {
               : Column(
                   children: [
                     Container(
-                      height: MediaQueryHeight * 0.3,
+                      height: MediaQueryHeight * 0.2,
                       width: 300,
                       color: Colors.blueGrey,
                     ),
@@ -115,23 +142,50 @@ class _MyHomePageState extends State<MyHomePage> {
                         Flexible(
                           fit: FlexFit.tight,
                           child: Container(
-                              height: MediaQueryHeight * 0.3,
+                              height: MediaQueryHeight * 0.2,
                               color: Colors.blue,
-                              child: Text("hallo ")),
+                              child: Text("flexible")),
                         ),
                         Flexible(
                           fit: FlexFit.loose,
                           child: Container(
-                              height: MediaQueryHeight * 0.3,
+                              height: MediaQueryHeight * 0.2,
                               color: Colors.red,
-                              child: Text("hallo")),
+                              child: Text("flexible")),
                         ),
                         Flexible(
                           fit: FlexFit.tight,
                           child: Container(
-                              height: MediaQueryHeight * 0.3,
+                              height: MediaQueryHeight * 0.2,
                               color: Colors.blue,
-                              child: Text("hallo")),
+                              child: Text("flexible")),
+                        )
+                      ],
+                    )),
+                    Container(
+                        child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Expanded(
+                          flex: 3,
+                          child: Container(
+                              height: MediaQueryHeight * 0.2,
+                              color: Colors.blue,
+                              child: Center(child: Text("Expanded"))),
+                        ),
+                        Expanded(
+                          flex: 7,
+                          child: Container(
+                              height: MediaQueryHeight * 0.2,
+                              color: Colors.red,
+                              child: Center(child: Text("Expanded"))),
+                        ),
+                        Expanded(
+                          flex: 5,
+                          child: Container(
+                              height: MediaQueryHeight * 0.2,
+                              color: Colors.blue,
+                              child: Center(child: Text("Expanded"))),
                         )
                       ],
                     )),
