@@ -35,11 +35,69 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text("Belajar Responsip"),
-      ),
-      body: Center(child: Text("Media Qyery")),
+    final MediaQueryHeight = MediaQuery.of(context).size.height;
+    final MediaQueryWidth = MediaQuery.of(context).size.width;
+    final myAppBar = AppBar(
+      title: Text("Belajar Responsip"),
     );
+
+    final bodyHeight = MediaQueryHeight -
+        myAppBar.preferredSize.height -
+        MediaQuery.of(context).padding.top;
+
+    final bool islandscape =
+        MediaQuery.of(context).orientation == Orientation.landscape;
+    return Scaffold(
+        appBar: myAppBar,
+        body: Center(
+          child: (islandscape)
+              ? Column(
+                  children: [
+                    Container(
+                      height: MediaQueryHeight * 0.4,
+                      width: MediaQueryWidth,
+                      color: Colors.blueGrey,
+                    ),
+                    Container(
+                      height: MediaQueryHeight * 0.4,
+                      child: GridView.builder(
+                        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                            crossAxisCount: 5),
+                        itemCount: 100,
+                        itemBuilder: (BuildContext context, int index) {
+                          return GridTile(
+                              child: Container(
+                            color: Colors.black,
+                          ));
+                        },
+                      ),
+                    ),
+                  ],
+                )
+              : Column(
+                  children: [
+                    Container(
+                      height: MediaQueryHeight * 0.3,
+                      width: 300,
+                      color: Colors.blueGrey,
+                    ),
+                    SizedBox(
+                      height: MediaQueryHeight * 0.1,
+                    ),
+                    Container(
+                      height: MediaQueryHeight * 0.5,
+                      child: ListView.builder(
+                        itemCount: 100,
+                        itemBuilder: (BuildContext context, int index) {
+                          return ListTile(
+                            leading: CircleAvatar(),
+                            title: Text("data"),
+                          );
+                        },
+                      ),
+                    ),
+                  ],
+                ),
+        ));
   }
 }
