@@ -38,7 +38,7 @@ class _MyHomePageState extends State<MyHomePage> {
     final MediaQueryHeight = MediaQuery.of(context).size.height;
     final MediaQueryWidth = MediaQuery.of(context).size.width;
     final myAppBar = AppBar(
-      title: Text("Belajar Responsip"),
+      title: Text("Belajar Responsive"),
     );
 
     final bodyHeight = MediaQueryHeight -
@@ -54,9 +54,21 @@ class _MyHomePageState extends State<MyHomePage> {
               ? Column(
                   children: [
                     Container(
-                      height: MediaQueryHeight * 0.2,
-                      width: MediaQueryWidth,
+                      height: MediaQueryHeight * 0.1,
+                      width: 300,
                       color: Colors.blueGrey,
+                      child: FittedBox(
+                        child: Text("FittedBox"),
+                      ),
+                    ),
+                    Container(
+                      height: MediaQueryHeight * 0.1,
+                      width: 300,
+                      color: Colors.blueGrey,
+                      child: FittedBox(
+                        child: Text(
+                            "FittedBox00000000000000000000000000000000000"),
+                      ),
                     ),
                     Container(
                         child: Row(
@@ -131,9 +143,21 @@ class _MyHomePageState extends State<MyHomePage> {
               : Column(
                   children: [
                     Container(
-                      height: MediaQueryHeight * 0.2,
+                      height: MediaQueryHeight * 0.1,
                       width: 300,
                       color: Colors.blueGrey,
+                      child: FittedBox(
+                        child: Text("FittedBox"),
+                      ),
+                    ),
+                    Container(
+                      height: MediaQueryHeight * 0.1,
+                      width: 300,
+                      color: Colors.blueGrey,
+                      child: FittedBox(
+                        child: Text(
+                            "FittedBox00000000000000000000000000000000000"),
+                      ),
                     ),
                     Container(
                         child: Row(
