@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 import 'package:flutter/services.dart';
 
 void main() {
@@ -55,7 +56,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   children: [
                     Container(
                       height: MediaQueryHeight * 0.1,
-                      width: 300,
+                      width: MediaQueryWidth,
                       color: Colors.blueGrey,
                       child: FittedBox(
                         child: Text("FittedBox"),
@@ -63,7 +64,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     ),
                     Container(
                       height: MediaQueryHeight * 0.1,
-                      width: 300,
+                      width: MediaQueryWidth,
                       color: Colors.blueGrey,
                       child: FittedBox(
                         child: Text(
@@ -126,16 +127,16 @@ class _MyHomePageState extends State<MyHomePage> {
                     )),
                     Container(
                       height: MediaQueryHeight * 0.2,
-                      child: GridView.builder(
-                        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                            crossAxisCount: 5),
-                        itemCount: 100,
-                        itemBuilder: (BuildContext context, int index) {
-                          return ListTile(
-                            leading: CircleAvatar(),
-                            title: Text("data"),
-                          );
-                        },
+                      color: Color.fromARGB(255, 67, 68, 68),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          NewContainer(MediaQueryWidth,),
+                          NewContainer(MediaQueryWidth, ),
+                          NewContainer(MediaQueryWidth, ),
+                          NewContainer(MediaQueryWidth, ),
+                          NewContainer(MediaQueryWidth, ),
+                        ],
                       ),
                     ),
                   ],
@@ -144,7 +145,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   children: [
                     Container(
                       height: MediaQueryHeight * 0.1,
-                      width: 300,
+                      width: MediaQueryWidth,
                       color: Colors.blueGrey,
                       child: FittedBox(
                         child: Text("FittedBox"),
@@ -152,7 +153,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     ),
                     Container(
                       height: MediaQueryHeight * 0.1,
-                      width: 300,
+                      width: MediaQueryWidth,
                       color: Colors.blueGrey,
                       child: FittedBox(
                         child: Text(
@@ -188,7 +189,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     )),
                     Container(
                         child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Expanded(
                           flex: 3,
@@ -215,18 +216,52 @@ class _MyHomePageState extends State<MyHomePage> {
                     )),
                     Container(
                       height: MediaQueryHeight * 0.3,
-                      child: ListView.builder(
-                        itemCount: 100,
-                        itemBuilder: (BuildContext context, int index) {
-                          return ListTile(
-                            leading: CircleAvatar(),
-                            title: Text("data"),
-                          );
-                        },
+                      color: Color.fromARGB(255, 67, 68, 68),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          NewCntainer(MediaQueryWidth, ),
+                          NewCntainer(MediaQueryWidth, ),
+                          NewCntainer(MediaQueryWidth, ),
+                          NewCntainer(MediaQueryWidth, ),
+                          NewCntainer(MediaQueryWidth, ),
+                        ],
                       ),
                     ),
                   ],
                 ),
         ));
+  }
+}
+
+class NewContainer extends StatelessWidget {
+  double MediaQueryWidth;
+  
+  NewContainer(this.MediaQueryWidth, );
+  @override
+  Widget build(BuildContext context) {
+    return LayoutBuilder(builder: (context, Constraints) {
+      return Container(
+        height: Constraints.maxHeight * 0.8,
+        width: MediaQueryWidth * 0.15,
+        color: Colors.green,
+      );
+    });
+  }
+}
+
+class NewCntainer extends StatelessWidget {
+  double MediaQueryWidth;
+  
+  NewCntainer(this.MediaQueryWidth, );
+  @override
+  Widget build(BuildContext context) {
+    return LayoutBuilder(builder: (context, Constraints) {
+      return Container(
+        height: Constraints.maxHeight * 0.8,
+        width: MediaQueryWidth * 0.15,
+        color: Colors.green,
+      );
+    });
   }
 }
