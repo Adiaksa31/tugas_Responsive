@@ -1,6 +1,14 @@
 # flutter_application_responsive
 
-A new Flutter project.
+Project Responsive
+
+Layout Web
+![Screenshot (71)](https://user-images.githubusercontent.com/93781731/196048968-6e755498-888d-4494-98b9-f283c84c8b83.png)
+
+
+Layout Smartphone
+![Screenshot (72)](https://user-images.githubusercontent.com/93781731/196048973-96a67960-dcbe-47a7-bf01-c62d2a29d464.png)
+![Screenshot (73)](https://user-images.githubusercontent.com/93781731/196048977-4a2e7d0a-0159-4c7b-a94b-e60f808bbd6e.png)
 
 ## Getting Started
 
